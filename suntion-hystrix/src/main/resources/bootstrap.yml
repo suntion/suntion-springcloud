@@ -8,6 +8,6 @@ spring:
       uri: ${configServer.url}
       label: master
     bootstrap:
-      enabled=false:
+      enabled: true
 logging:
   path: /var/log/${spring.application.name}

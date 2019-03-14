@@ -1,13 +1,13 @@
 spring:
-  application:
-    name: suntion-eureka
-  profiles:
-    active: ${active.profile}
-  cloud:
-    config:
-      uri: ${configServer.url}
-      label: master
-    bootstrap:
-      enabled=false:
+    application:
+        name: suntion-eureka
+    profiles:
+        active: ${active.profile}
+    cloud:
+        config:
+            uri: ${config.url}
+            label: master
+        bootstrap:
+            enabled: true
 logging:
-  path: /var/log/${spring.application.name}
+    path: /var/log/${spring.application.name}

@@ -5,9 +5,9 @@ spring:
     active: ${active.profile}
   cloud:
     config:
-      uri: ${configServer.url}
+      uri: ${config.url}
       label: master
     bootstrap:
-      enabled=false:
+      enabled: true
 logging:
   path: /var/log/${spring.application.name}
