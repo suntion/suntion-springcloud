@@ -1,5 +1,7 @@
 server:
     port: 8761
+logging:
+    path: /var/log/${spring.application.name}
 spring:
     application:
         name: suntion-eureka

@@ -1,5 +1,7 @@
 server:
     port: 9001
+logging:
+    path: /var/log/${spring.application.name}
 spring:
     application:
         name: suntion-hystrix
