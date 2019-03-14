@@ -70,8 +70,6 @@
     <springProfile name="dev">
         <root level="info">
             <appender-ref ref="CONSOLE"/>
-            <appender-ref ref="INFO_FILE"/>
-            <appender-ref ref="ERROR_FILE"/>
         </root>
     </springProfile>
     <springProfile name="test">
@@ -81,16 +79,10 @@
         </root>
     </springProfile>
     <springProfile name="prod">
-        <root level="error">
+        <root level="warn">
             <appender-ref ref="ERROR_FILE"/>
         </root>
     </springProfile>
-
-    <!--<root level="${ROOT_LOG_LEVEL}" additivity="false">-->
-        <!--<appender-ref ref="CONSOLE" />-->
-        <!--<appender-ref ref="INFO_FILE" />-->
-        <!--<appender-ref ref="ERROR_FILE" />-->
-    <!--</root>-->
 
     <!--
   <appender name="LOGSTASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
@@ -98,6 +90,5 @@
       <encoder charset="UTF-8" class="net.logstash.logback.encoder.LogstashEncoder"/>
   </appender>
   -->
-
 
 </configuration>

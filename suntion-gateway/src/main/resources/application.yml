@@ -3,6 +3,8 @@ server:
 spring:
     application:
         name: suntion-gateway
+        profiles:
+            active: ${active.profile}
     cloud:
         gateway:
             routes:

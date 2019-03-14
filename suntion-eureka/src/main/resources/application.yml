@@ -3,6 +3,8 @@ server:
 spring:
     application:
         name: suntion-eureka
+        profiles:
+            active: ${active.profile}
 eureka:
     instance:
         hostname: suntion.cc

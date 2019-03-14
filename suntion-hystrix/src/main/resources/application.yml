@@ -3,6 +3,8 @@ server:
 spring:
     application:
         name: suntion-hystrix
+        profiles:
+            active: ${active.profile}
 eureka:
     client:
         service-url:

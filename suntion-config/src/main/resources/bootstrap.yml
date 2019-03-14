@@ -12,9 +12,5 @@ spring:
             - third-env/dev
             - third-env/test
             - third-env/prod
-eureka:  #config-server注册到eureka
-  client:
-    serviceUrl:
-      defaultZone: http://suntion.cc:8761/eureka
 logging:
   path: /var/log/${spring.application.name}
