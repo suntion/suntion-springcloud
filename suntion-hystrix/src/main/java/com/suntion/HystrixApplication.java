@@ -12,6 +12,9 @@ import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboar
 import org.springframework.cloud.netflix.turbine.EnableTurbine;
 import org.springframework.context.annotation.Bean;
 
+/**
+ * @author: Suntion
+ */
 @SpringCloudApplication
 @EnableHystrixDashboard
 @EnableTurbine
