@@ -18,6 +18,7 @@
 
         <cloud.version>Finchley.SR3</cloud.version>
         <boot.version>2.0.8.RELEASE</boot.version>
+        <docker.image.prefix>suntion</docker.image.prefix>
     </properties>
 
     <build>
@@ -33,6 +34,22 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>0.4.3</version>
+                <configuration>
+                    <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
+                    <resources>
+                        <resource>
+                            <targetPath>/</targetPath>
+                            <directory>${project.build.directory}</directory>
+                            <include>${project.build.finalName}.jar</include>
+                        </resource>
+                    </resources>
+                </configuration>
             </plugin>
         </plugins>
 
@@ -66,11 +83,45 @@
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-config-client</artifactId>
+            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
     </dependencies>
+
+    <profiles>
+        <profile>
+            <id>eureka-server1-dev</id>
+            <properties>
+                <active.profile>eureka-server1</active.profile>
+                <service.url>http://localhost:8762/eureka/</service.url>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>eureka-server2-dev</id>
+            <properties>
+                <active.profile>eureka-server2</active.profile>
+                <service.url>http://localhost:8761/eureka/</service.url>
+            </properties>
+        </profile>
+        <profile>
+            <id>eureka-server1-test</id>
+            <properties>
+                <active.profile>eureka-server1</active.profile>
+                <service.url>http://sontion.cn:8762/eureka/</service.url>
+            </properties>
+        </profile>
+        <profile>
+            <id>eureka-server2-test</id>
+            <properties>
+                <active.profile>eureka-server2</active.profile>
+                <service.url>http://sontion.cn:8761/eureka/</service.url>
+            </properties>
+        </profile>
+    </profiles>
 </project>
