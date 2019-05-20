@@ -21,7 +21,7 @@
         <boot.version>2.0.8.RELEASE</boot.version>
 
         <docker.repostory>registry.cn-hangzhou.aliyuncs.com</docker.repostory>
-        <docker.registry.name>suntion/dev</docker.registry.name>
+        <docker.registry.name>suntion</docker.registry.name>
     </properties>
 
     <build>
