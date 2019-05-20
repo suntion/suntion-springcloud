@@ -1,4 +1,4 @@
-FROM frolvlad/alpine-oraclejdk8:slim
+FROM frolvlad/alpine-oraclejdk8:temporary
 VOLUME /tmp
 ADD suntion-eureka-1.0-SNAPSHOT.jar app.jar
 RUN sh -c 'touch /app.jar'
