@@ -13,12 +13,15 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
 
         <cloud.version>Finchley.SR3</cloud.version>
         <boot.version>2.0.8.RELEASE</boot.version>
-        <docker.image.prefix>suntion</docker.image.prefix>
+
+        <docker.repostory>registry.cn-hangzhou.aliyuncs.com</docker.repostory>
+        <docker.registry.name>suntion-dev</docker.registry.name>
     </properties>
 
     <build>
@@ -39,9 +42,10 @@
             <plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
-                <version>0.4.3</version>
+                <version>0.4.12</version>
                 <configuration>
-                    <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
+                    <imageName>${docker.repostory}/${docker.registry.name}/${project.artifactId}:${project.version}</imageName>
+                    <dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
                     <resources>
                         <resource>
                             <targetPath>/</targetPath>
@@ -49,6 +53,9 @@
                             <include>${project.build.finalName}.jar</include>
                         </resource>
                     </resources>
+                    <serverId>docker-aliyun</serverId>
+                    <registryUrl>${docker.repostory}</registryUrl>
+                    <pushImage>true</pushImage>
                 </configuration>
             </plugin>
         </plugins>
@@ -93,35 +100,15 @@
 
     <profiles>
         <profile>
-            <id>eureka-server1-dev</id>
+            <id>dev</id>
             <properties>
-                <active.profile>eureka-server1</active.profile>
-                <service.url>http://localhost:8762/eureka/</service.url>
+                <active.profile>dev</active.profile>
+                <service.url>http://127.0.0.1:8762/eureka/</service.url>
             </properties>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
         </profile>
-        <profile>
-            <id>eureka-server2-dev</id>
-            <properties>
-                <active.profile>eureka-server2</active.profile>
-                <service.url>http://localhost:8761/eureka/</service.url>
-            </properties>
-        </profile>
-        <profile>
-            <id>eureka-server1-test</id>
-            <properties>
-                <active.profile>eureka-server1</active.profile>
-                <service.url>http://sontion.cn:8762/eureka/</service.url>
-            </properties>
-        </profile>
-        <profile>
-            <id>eureka-server2-test</id>
-            <properties>
-                <active.profile>eureka-server2</active.profile>
-                <service.url>http://sontion.cn:8761/eureka/</service.url>
-            </properties>
-        </profile>
+
     </profiles>
 </project>

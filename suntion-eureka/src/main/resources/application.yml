@@ -1,3 +1,5 @@
+server:
+    port: 8761
 logging:
     path: /var/log/suntion/${spring.application.name}
 spring:
@@ -5,3 +7,12 @@ spring:
         name: eureka-cluster
     profiles:
         active: ${active.profile}
+eureka:
+    instance:
+        hostname: eureka-server
+    client:
+        service-url:
+            - ${service.url}
+        register-with-eureka: false
+
+
