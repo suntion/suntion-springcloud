@@ -1,7 +1,5 @@
 server:
     port: 8761
-logging:
-    path: /var/log/suntion/${spring.application.name}
 spring:
     application:
         name: eureka-cluster
@@ -12,5 +10,5 @@ eureka:
         hostname: eureka-server
     client:
         service-url:
-            - ${service.url}
+            - http://127.0.0.1:8762/eureka/
 
