@@ -2,12 +2,12 @@ server:
     port: 8761
 spring:
     application:
-        name: eureka-server
+        name: suntion-server
     profiles:
         active: ${active.profile}
 eureka:
     instance:
-        hostname: eureka-server
+        hostname: suntion-server
         prefer-ip-address: true
         instance-id: ${spring.cloud.client.ipAddress}:${server.port}
         leaseRenewalIntervalInSeconds: 10
