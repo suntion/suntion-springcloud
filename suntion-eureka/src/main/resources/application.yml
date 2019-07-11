@@ -3,6 +3,8 @@ server:
 spring:
     application:
         name: eureka-server
+    profiles:
+        active: ${active.profile}
 eureka:
     instance:
         hostname: eureka-server

@@ -14,4 +14,34 @@
         <module>suntion-gateway</module>
 		<module>suntion-hystrix-dashboard</module>
     </modules>
+
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <active.profile>dev</active.profile>
+                <config.url>http://127.0.0.1:8888</config.url>
+                <config.branch>develop</config.branch>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>test</id>
+            <properties>
+                <active.profile>test</active.profile>
+                <config.url>http://sontion.cn:8888</config.url>
+                <config.branch>develop</config.branch>
+            </properties>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <properties>
+                <active.profile>prod</active.profile>
+                <config.url>http://sontion.cn:8888</config.url>
+                <config.branch>master</config.branch>
+            </properties>
+        </profile>
+    </profiles>
 </project>

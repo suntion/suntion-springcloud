@@ -3,6 +3,8 @@ server:
 spring:
   application:
     name: suntion-config
+  profiles:
+    active: ${active.profile}
   cloud:
     config:
       server:

@@ -89,34 +89,4 @@
             <artifactId>spring-cloud-starter-netflix-turbine</artifactId>
         </dependency>
     </dependencies>
-
-    <profiles>
-        <profile>
-            <id>dev</id>
-            <properties>
-                <active.profile>dev</active.profile>
-                <config.url>http://localhost:8888</config.url>
-                <config.branch>master</config.branch>
-            </properties>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-        </profile>
-        <profile>
-            <id>test</id>
-            <properties>
-                <active.profile>test</active.profile>
-                <config.url>http://suntion.cc:8888</config.url>
-                <config.branch>master</config.branch>
-            </properties>
-        </profile>
-        <profile>
-            <id>prod</id>
-            <properties>
-                <active.profile>prod</active.profile>
-                <config.url>http://suntion.cc:8888</config.url>
-                <config.branch>master</config.branch>
-            </properties>
-        </profile>
-    </profiles>
 </project>
