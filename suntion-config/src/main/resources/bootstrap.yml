@@ -12,5 +12,3 @@ spring:
             - third-env/dev
             - third-env/test
             - third-env/prod
-logging:
-  path: /var/log/${spring.application.name}

@@ -1,0 +1,17 @@
+server:
+    port: 8761
+spring:
+    application:
+        name: eureka-server
+eureka:
+    instance:
+        hostname: eureka-server
+        prefer-ip-address: true
+        instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+        leaseRenewalIntervalInSeconds: 10
+        leaseExpirationDurationInSeconds: 30
+    client:
+        service-url:
+            - http://suntion:8762/eureka/
+        register-with-eureka: false
+        fetch-registry: false

@@ -12,34 +12,6 @@
         <module>suntion-config</module>
         <module>suntion-eureka</module>
         <module>suntion-gateway</module>
-		<module>suntion-hystrix</module>
+		<module>suntion-hystrix-dashboard</module>
     </modules>
-
-    <profiles>
-        <profile>
-            <id>dev</id>
-            <properties>
-                <active.profile>dev</active.profile>
-                <config.url>http://suntion.cc:8888</config.url>
-            </properties>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-        </profile>
-        <profile>
-            <id>test</id>
-            <properties>
-                <active.profile>test</active.profile>
-                <config.url>http://suntion.cc:8888</config.url>
-            </properties>
-        </profile>
-        <profile>
-            <id>prod</id>
-            <properties>
-                <active.profile>prod</active.profile>
-                <config.url>http://suntion.cc:8888</config.url>
-            </properties>
-        </profile>
-    </profiles>
-
 </project>

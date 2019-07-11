@@ -30,9 +30,9 @@
 
     <appender name="system" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-            <FileNamePattern>${LOG_PATH}/${APPLICATION_NAME}/system_%d{yyyy-MM-dd}.%i.log</FileNamePattern>
+            <FileNamePattern>${LOG_PATH}/${APPLICATION_NAME}/system_%d{yyyy-MM-dd}_%i.log</FileNamePattern>
             <MaxHistory>10</MaxHistory>
-            <maxFileSize>100M</maxFileSize>
+            <maxFileSize>100MB</maxFileSize>
         </rollingPolicy>
         <encoder>
             <pattern>${LOG_PATTERN}</pattern>

@@ -70,32 +70,8 @@
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
     </dependencies>
-
-    <profiles>
-        <profile>
-            <id>dev</id>
-            <properties>
-                <active.profile>dev</active.profile>
-            </properties>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-        </profile>
-        <profile>
-            <id>test</id>
-            <properties>
-                <active.profile>test</active.profile>
-            </properties>
-        </profile>
-        <profile>
-            <id>prod</id>
-            <properties>
-                <active.profile>prod</active.profile>
-            </properties>
-        </profile>
-    </profiles>
 </project>
