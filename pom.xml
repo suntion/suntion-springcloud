@@ -32,7 +32,7 @@
             <properties>
                 <active.profile>test</active.profile>
                 <config.url>http://sontion.cn:8888</config.url>
-                <config.branch>develop</config.branch>
+                <config.branch>master</config.branch>
             </properties>
         </profile>
         <profile>
