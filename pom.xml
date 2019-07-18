@@ -20,8 +20,8 @@
             <id>dev</id>
             <properties>
                 <active.profile>dev</active.profile>
-                <config.url>http://127.0.0.1:8888</config.url>
-                <config.branch>develop</config.branch>
+                <config.url>http://sontion.cn:8888</config.url>
+                <config.branch>master</config.branch>
             </properties>
             <activation>
                 <activeByDefault>true</activeByDefault>
