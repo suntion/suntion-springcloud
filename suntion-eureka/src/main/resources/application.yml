@@ -3,7 +3,7 @@ server:
     ssl:
         key-store: classpath:suntion.cc.pfx
         key-store-type: PKCS12
-        key-password: cgTv99ha
+        key-store-password: cgTv99ha
 spring:
     application:
         name: suntion-eureka
