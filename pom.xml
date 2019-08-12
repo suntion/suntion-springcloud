@@ -20,8 +20,9 @@
             <id>dev</id>
             <properties>
                 <active.profile>dev</active.profile>
-                <config.url>https://localhost:8888</config.url>
-                <config.branch>master</config.branch>
+                <config.label>master</config.label>
+                <eureka.serviceId>suntion-config</eureka.serviceId>
+                <eureka.address>'http://localhost:8761/eureka'</eureka.address>
             </properties>
             <activation>
                 <activeByDefault>true</activeByDefault>
@@ -31,16 +32,18 @@
             <id>test</id>
             <properties>
                 <active.profile>test</active.profile>
-                <config.url>https://suntion.cc:8888</config.url>
-                <config.branch>master</config.branch>
+                <config.label>master</config.label>
+                <eureka.serviceId>suntion-config</eureka.serviceId>
+                <eureka.address>http://sontion.cn:8761/eureka/</eureka.address>
             </properties>
         </profile>
         <profile>
             <id>prod</id>
             <properties>
                 <active.profile>prod</active.profile>
-                <config.url>https://suntion.cc:8888</config.url>
-                <config.branch>master</config.branch>
+                <config.label>master</config.label>
+                <eureka.serviceId>suntion-config</eureka.serviceId>
+                <eureka.address>http://sontion.cn:8761/eureka/</eureka.address>
             </properties>
         </profile>
     </profiles>
