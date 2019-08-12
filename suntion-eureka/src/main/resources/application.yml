@@ -3,10 +3,3 @@ spring:
         name: suntion-eureka
     profiles:
         active: ${active.profile}
-eureka:
-    instance:
-        hostname: suntion-eureka
-        prefer-ip-address: true
-        instance-id: ${spring.cloud.client.ipAddress}:${server.port}
-        leaseRenewalIntervalInSeconds: 10 #续约更新
-        leaseExpirationDurationInSeconds: 30 #续约到期
