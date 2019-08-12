@@ -15,8 +15,8 @@ import org.springframework.context.annotation.Profile;
  * @Author scott
  * @Data 2019/8/611:39
  **/
-@Configuration
-@Profile({"test"})
+//@Configuration
+//@Profile({"test","dev"})
 public class HttpsConfig {
 
     @Value("${server.port}")

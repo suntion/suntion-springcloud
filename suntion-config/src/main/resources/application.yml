@@ -1,9 +1,3 @@
-server:
-  port: 8888
-  ssl:
-    key-store: classpath:suntion.cc.pfx
-    key-store-type: PKCS12
-    key-store-password: cgTv99ha
 spring:
   application:
     name: suntion-config

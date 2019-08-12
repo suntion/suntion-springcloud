@@ -1,9 +1,3 @@
-server:
-    port: 8761
-    ssl:
-        key-store: classpath:suntion.cc.pfx
-        key-store-type: PKCS12
-        key-store-password: cgTv99ha
 spring:
     application:
         name: suntion-eureka
@@ -14,10 +8,5 @@ eureka:
         hostname: suntion-eureka
         prefer-ip-address: true
         instance-id: ${spring.cloud.client.ipAddress}:${server.port}
-        leaseRenewalIntervalInSeconds: 10
-        leaseExpirationDurationInSeconds: 30
-    client:
-        service-url:
-            - https://suntion.cc:8761/eureka/
-        register-with-eureka: false
-        fetch-registry: false
+        leaseRenewalIntervalInSeconds: 10 #续约更新
+        leaseExpirationDurationInSeconds: 30 #续约到期
