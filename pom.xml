@@ -34,7 +34,7 @@
                 <active.profile>test</active.profile>
                 <config.label>master</config.label>
                 <eureka.serviceId>suntion-config</eureka.serviceId>
-                <eureka.address>http://sontion.cn:8761/eureka/</eureka.address>
+                <eureka.address>'http://sontion.cn:8761/eureka'</eureka.address>
             </properties>
         </profile>
         <profile>
@@ -43,7 +43,7 @@
                 <active.profile>prod</active.profile>
                 <config.label>master</config.label>
                 <eureka.serviceId>suntion-config</eureka.serviceId>
-                <eureka.address>http://sontion.cn:8761/eureka/</eureka.address>
+                <eureka.address>'http://sontion.cn:8761/eureka'</eureka.address>
             </properties>
         </profile>
     </profiles>

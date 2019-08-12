@@ -1,3 +1,5 @@
+server:
+  port: 8888
 spring:
   application:
     name: suntion-config
@@ -12,3 +14,7 @@ spring:
             - third-env/dev
             - third-env/test
             - third-env/prod
+eureka:
+  client:
+    service-url:
+      defaultZone: ${eureka.address}

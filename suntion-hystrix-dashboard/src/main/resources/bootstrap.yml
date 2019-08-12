@@ -1,6 +1,6 @@
 spring:
   application:
-    name: suntion-gateway
+    name: suntion-hystrix-dashboard
   profiles:
     active: ${active.profile}
   cloud:

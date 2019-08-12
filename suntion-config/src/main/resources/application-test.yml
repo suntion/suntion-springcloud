@@ -1,6 +1,0 @@
-server:
-  port: 8888
-eureka:
-  client:
-    service-url:
-      defaultZone: http://sontion.cn:8761/eureka/
